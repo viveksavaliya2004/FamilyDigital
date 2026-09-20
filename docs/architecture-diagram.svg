@@ -1,0 +1,1077 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" style="background:#0b1120; font-family:'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#070d19"/>
+    </linearGradient>
+
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+
+    <linearGradient id="actorCardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <linearGradient id="frontendGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#111c30"/>
+    </linearGradient>
+
+    <linearGradient id="gatewayGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#172554"/>
+    </linearGradient>
+
+    <linearGradient id="engineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <linearGradient id="dbGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+
+    <linearGradient id="redisGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7f1d1d"/>
+      <stop offset="100%" stop-color="#450a0a"/>
+    </linearGradient>
+
+    <linearGradient id="storageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#78350f"/>
+      <stop offset="100%" stop-color="#451a03"/>
+    </linearGradient>
+
+    <linearGradient id="extGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+
+    <linearGradient id="securityGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#831843"/>
+      <stop offset="50%" stop-color="#be185d"/>
+      <stop offset="100%" stop-color="#701a75"/>
+    </linearGradient>
+
+    <linearGradient id="flowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="33%" stop-color="#6366f1"/>
+      <stop offset="66%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+
+    <!-- Filters & Shadows -->
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="125%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+    <filter id="glowBlue" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="glow"/>
+      <feComposite in="SourceGraphic" in2="glow" operator="over"/>
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38bdf8"/>
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#34d399"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#fbbf24"/>
+    </marker>
+    <marker id="arrowExt" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#94a3b8"/>
+    </marker>
+    <marker id="arrowSec" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#f472b6"/>
+    </marker>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Background Grid -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40"/>
+    </pattern>
+    <rect width="1920" height="1080" fill="url(#grid)"/>
+  </g>
+
+  <!-- ================= HEADER SECTION ================= -->
+  <g transform="translate(30, 20)">
+    <rect width="1860" height="60" rx="12" fill="#1e293b" stroke="#334155" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="8" height="44" x="8" y="8" rx="4" fill="url(#headerGrad)"/>
+    
+    <text x="30" y="32" fill="#ffffff" font-size="20" font-weight="700" letter-spacing="0.5">
+      Family Identity, Relationship Verification &amp; Beneficiary Management Platform
+    </text>
+    <text x="30" y="50" fill="#94a3b8" font-size="12" font-weight="500">
+      Enterprise Production System Architecture • End-to-End Government Welfare &amp; Deduplication Backbone
+    </text>
+
+    <!-- Top Status Badges -->
+    <g transform="translate(1380, 15)">
+      <rect width="130" height="30" rx="6" fill="#0369a1" fill-opacity="0.25" stroke="#0284c7" stroke-width="1"/>
+      <circle cx="15" cy="15" r="4" fill="#38bdf8"/>
+      <text x="26" y="19" fill="#e0f2fe" font-size="11" font-weight="600">5-Layer Architecture</text>
+
+      <rect x="140" width="140" height="30" rx="6" fill="#065f46" fill-opacity="0.25" stroke="#059669" stroke-width="1"/>
+      <circle cx="155" cy="15" r="4" fill="#34d399"/>
+      <text x="166" y="19" fill="#d1fae5" font-size="11" font-weight="600">Zero-Raw PII Policy</text>
+
+      <rect x="290" width="160" height="30" rx="6" fill="#831843" fill-opacity="0.25" stroke="#db2777" stroke-width="1"/>
+      <circle cx="305" cy="15" r="4" fill="#f472b6"/>
+      <text x="316" y="19" fill="#fce7f3" font-size="11" font-weight="600">Immutable Audit Trail</text>
+    </g>
+  </g>
+
+  <!-- ================= MAIN ARCHITECTURE AREA (5 COLUMNS) ================= -->
+
+  <!-- ================= COLUMN 1: USERS & EXTERNAL ACTORS (LAYER 1) ================= -->
+  <g transform="translate(30, 95)">
+    <!-- Container Box -->
+    <rect width="220" height="740" rx="12" fill="url(#actorCardGrad)" stroke="#334155" stroke-width="1.5" filter="url(#cardShadow)"/>
+    
+    <!-- Header -->
+    <rect width="220" height="38" rx="12" fill="#1e3a8a" fill-opacity="0.4"/>
+    <text x="15" y="24" fill="#38bdf8" font-size="13" font-weight="700" letter-spacing="0.5">LAYER 1: ACTORS &amp; USERS</text>
+    
+    <!-- Actor 1: Citizen -->
+    <g transform="translate(12, 48)">
+      <rect width="196" height="155" rx="8" fill="#0f172a" stroke="#0284c7" stroke-width="1.2"/>
+      <rect width="196" height="26" rx="8" fill="#0284c7" fill-opacity="0.2"/>
+      <text x="10" y="18" fill="#38bdf8" font-size="12" font-weight="700">👤 Citizen / Family Head</text>
+      
+      <text x="12" y="42" fill="#cbd5e1" font-size="10">• Self Registration &amp; Auth</text>
+      <text x="12" y="58" fill="#cbd5e1" font-size="10">• Add Family Members</text>
+      <text x="12" y="74" fill="#cbd5e1" font-size="10">• Build &amp; Claim Relationships</text>
+      <text x="12" y="90" fill="#cbd5e1" font-size="10">• Upload Proof Documents</text>
+      <text x="12" y="106" fill="#cbd5e1" font-size="10">• View Family ID &amp; Visual Tree</text>
+      <text x="12" y="122" fill="#cbd5e1" font-size="10">• Check Scheme Eligibility</text>
+      <text x="12" y="138" fill="#cbd5e1" font-size="10">• Track Welfare Applications</text>
+    </g>
+
+    <!-- Actor 2: Government Officer -->
+    <g transform="translate(12, 213)">
+      <rect width="196" height="165" rx="8" fill="#0f172a" stroke="#10b981" stroke-width="1.2"/>
+      <rect width="196" height="26" rx="8" fill="#10b981" fill-opacity="0.2"/>
+      <text x="10" y="18" fill="#34d399" font-size="12" font-weight="700">🏛️ Government Officer</text>
+      
+      <text x="12" y="42" fill="#cbd5e1" font-size="10">• Review Pending Families</text>
+      <text x="12" y="58" fill="#cbd5e1" font-size="10">• Verify Member Identities</text>
+      <text x="12" y="74" fill="#cbd5e1" font-size="10">• Verify Claimed Relations</text>
+      <text x="12" y="90" fill="#cbd5e1" font-size="10">• Inspect Uploaded Documents</text>
+      <text x="12" y="106" fill="#cbd5e1" font-size="10">• Approve / Reject / Return</text>
+      <text x="12" y="122" fill="#cbd5e1" font-size="10">• Resolve Duplicate Queues</text>
+      <text x="12" y="138" fill="#cbd5e1" font-size="10">• Beneficiary Entitlement Review</text>
+      <text x="12" y="154" fill="#cbd5e1" font-size="10">• Audit Trail Inspection</text>
+    </g>
+
+    <!-- Actor 3: District / Taluka Admin -->
+    <g transform="translate(12, 388)">
+      <rect width="196" height="150" rx="8" fill="#0f172a" stroke="#f59e0b" stroke-width="1.2"/>
+      <rect width="196" height="26" rx="8" fill="#f59e0b" fill-opacity="0.2"/>
+      <text x="10" y="18" fill="#fbbf24" font-size="12" font-weight="700">🏢 District / Taluka Admin</text>
+      
+      <text x="12" y="42" fill="#cbd5e1" font-size="10">• Officer RBAC &amp; Workload</text>
+      <text x="12" y="58" fill="#cbd5e1" font-size="10">• Jurisdictional Governance</text>
+      <text x="12" y="74" fill="#cbd5e1" font-size="10">• Duplicate Cluster Escalation</text>
+      <text x="12" y="90" fill="#cbd5e1" font-size="10">• Family Merge / Split Approvals</text>
+      <text x="12" y="106" fill="#cbd5e1" font-size="10">• SLA &amp; Backlog Monitoring</text>
+      <text x="12" y="122" fill="#cbd5e1" font-size="10">• Executive Reports &amp; Exports</text>
+      <text x="12" y="138" fill="#cbd5e1" font-size="10">• Security &amp; Compliance Audits</text>
+    </g>
+
+    <!-- Actor 4: Scheme Department -->
+    <g transform="translate(12, 548)">
+      <rect width="196" height="175" rx="8" fill="#0f172a" stroke="#818cf8" stroke-width="1.2"/>
+      <rect width="196" height="26" rx="8" fill="#818cf8" fill-opacity="0.2"/>
+      <text x="10" y="18" fill="#a5b4fc" font-size="12" font-weight="700">💼 Scheme Departments</text>
+      
+      <text x="12" y="42" fill="#cbd5e1" font-size="10">• Welfare Scheme Onboarding</text>
+      <text x="12" y="58" fill="#cbd5e1" font-size="10">• Define Eligibility Rulesets</text>
+      <text x="12" y="74" fill="#cbd5e1" font-size="10">• Query Verified Family Data</text>
+      <text x="12" y="90" fill="#cbd5e1" font-size="10">• Direct Benefit Transfer (DBT)</text>
+      <text x="12" y="106" fill="#cbd5e1" font-size="10">• Beneficiary Mapping Sync</text>
+      <text x="12" y="122" fill="#cbd5e1" font-size="10">• Disbursal Status Webhooks</text>
+      <text x="12" y="138" fill="#cbd5e1" font-size="10">• Cross-Scheme Exclusion Audit</text>
+      <text x="12" y="154" fill="#cbd5e1" font-size="10">• Fraud Pattern Analytics</text>
+    </g>
+  </g>
+
+  <!-- ================= COLUMN 2: FRONTEND PRESENTATION LAYER (LAYER 2) ================= -->
+  <g transform="translate(270, 95)">
+    <rect width="260" height="740" rx="12" fill="url(#frontendGrad)" stroke="#334155" stroke-width="1.5" filter="url(#cardShadow)"/>
+    
+    <!-- Header -->
+    <rect width="260" height="38" rx="12" fill="#0284c7" fill-opacity="0.3"/>
+    <text x="15" y="24" fill="#38bdf8" font-size="13" font-weight="700" letter-spacing="0.5">LAYER 2: PRESENTATION</text>
+
+    <!-- App 1: Citizen Web / Mobile Portal -->
+    <g transform="translate(12, 48)">
+      <rect width="236" height="325" rx="8" fill="#0b1329" stroke="#38bdf8" stroke-width="1.2"/>
+      <rect width="236" height="28" rx="8" fill="#38bdf8" fill-opacity="0.15"/>
+      <text x="12" y="19" fill="#7dd3fc" font-size="12" font-weight="700">📱 Citizen Web / Mobile App</text>
+      
+      <!-- Sub-modules -->
+      <g transform="translate(10, 36)">
+        <rect width="216" height="34" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="10" y="21" fill="#f8fafc" font-size="11" font-weight="600">🔐 Auth &amp; OTP Portal</text>
+      </g>
+      <g transform="translate(10, 76)">
+        <rect width="216" height="42" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="10" y="18" fill="#f8fafc" font-size="11" font-weight="600">📋 Family Onboarding Wizard</text>
+        <text x="10" y="32" fill="#94a3b8" font-size="9">Head details, Address, KYC proof</text>
+      </g>
+      <g transform="translate(10, 124)">
+        <rect width="216" height="42" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="10" y="18" fill="#f8fafc" font-size="11" font-weight="600">🌳 Family Tree Interactive Canvas</text>
+        <text x="10" y="32" fill="#38bdf8" font-size="9">React Flow • Visual Generation Layout</text>
+      </g>
+      <g transform="translate(10, 172)">
+        <rect width="216" height="42" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="10" y="18" fill="#f8fafc" font-size="11" font-weight="600">📎 Document Vault &amp; Proof Uploader</text>
+        <text x="10" y="32" fill="#94a3b8" font-size="9">Client Validation, Preview, Status</text>
+      </g>
+      <g transform="translate(10, 220)">
+        <rect width="216" height="42" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="10" y="18" fill="#f8fafc" font-size="11" font-weight="600">🎯 Scheme Discovery &amp; Eligibility</text>
+        <text x="10" y="32" fill="#94a3b8" font-size="9">Matching Engine, 1-Click Apply</text>
+      </g>
+      <g transform="translate(10, 268)">
+        <rect width="216" height="44" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="10" y="18" fill="#f8fafc" font-size="11" font-weight="600">📜 Family Digital Card &amp; QR Pass</text>
+        <text x="10" y="32" fill="#34d399" font-size="9">Offline verifiable QR • Family ID: FAM-XXXX</text>
+      </g>
+    </g>
+
+    <!-- App 2: Officer & Admin Dashboard -->
+    <g transform="translate(12, 385)">
+      <rect width="236" height="230" rx="8" fill="#0b1329" stroke="#10b981" stroke-width="1.2"/>
+      <rect width="236" height="28" rx="8" fill="#10b981" fill-opacity="0.15"/>
+      <text x="12" y="19" fill="#6ee7b7" font-size="12" font-weight="700">🖥️ Officer / Admin Dashboard</text>
+
+      <g transform="translate(10, 36)">
+        <rect width="216" height="34" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="10" y="21" fill="#f8fafc" font-size="11" font-weight="600">📥 Verification Action Queue</text>
+      </g>
+      <g transform="translate(10, 76)">
+        <rect width="216" height="34" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="10" y="21" fill="#f8fafc" font-size="11" font-weight="600">🔍 Side-by-Side Doc Inspector</text>
+      </g>
+      <g transform="translate(10, 116)">
+        <rect width="216" height="34" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="10" y="21" fill="#f8fafc" font-size="11" font-weight="600">⚠️ Duplicate Cluster Resolution UI</text>
+      </g>
+      <g transform="translate(10, 156)">
+        <rect width="216" height="34" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="10" y="21" fill="#f8fafc" font-size="11" font-weight="600">📊 Beneficiary Application Approvals</text>
+      </g>
+      <g transform="translate(10, 194)">
+        <rect width="216" height="28" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="10" y="18" fill="#f8fafc" font-size="10" font-weight="600">📈 GIS / District Analytics Views</text>
+      </g>
+    </g>
+
+    <!-- Frontend Tech Stack Label Box -->
+    <g transform="translate(12, 625)">
+      <rect width="236" height="100" rx="8" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+      <text x="12" y="20" fill="#94a3b8" font-size="10" font-weight="700" letter-spacing="0.5">PRESENTATION TECH STACK</text>
+      
+      <g transform="translate(10, 30)">
+        <rect width="65" height="22" rx="4" fill="#0284c7" fill-opacity="0.2"/>
+        <text x="7" y="15" fill="#38bdf8" font-size="10" font-weight="600">React 18</text>
+
+        <rect x="72" width="75" height="22" rx="4" fill="#3b82f6" fill-opacity="0.2"/>
+        <text x="78" y="15" fill="#60a5fa" font-size="10" font-weight="600">TypeScript</text>
+
+        <rect x="154" width="62" height="22" rx="4" fill="#06b6d4" fill-opacity="0.2"/>
+        <text x="160" y="15" fill="#22d3ee" font-size="10" font-weight="600">Tailwind</text>
+      </g>
+
+      <g transform="translate(10, 60)">
+        <rect width="78" height="22" rx="4" fill="#6366f1" fill-opacity="0.2"/>
+        <text x="6" y="15" fill="#a5b4fc" font-size="10" font-weight="600">React Flow</text>
+
+        <rect x="85" width="60" height="22" rx="4" fill="#ec4899" fill-opacity="0.2"/>
+        <text x="92" y="15" fill="#f472b6" font-size="10" font-weight="600">Router</text>
+
+        <rect x="152" width="64" height="22" rx="4" fill="#10b981" fill-opacity="0.2"/>
+        <text x="162" y="15" fill="#34d399" font-size="10" font-weight="600">Axios</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= COLUMN 3: API GATEWAY & BACKEND SERVICES LAYER (LAYER 3) ================= -->
+  <g transform="translate(550, 95)">
+    <rect width="560" height="740" rx="12" fill="#0d1527" stroke="#334155" stroke-width="1.5" filter="url(#cardShadow)"/>
+    
+    <!-- Header -->
+    <rect width="560" height="38" rx="12" fill="#4338ca" fill-opacity="0.3"/>
+    <text x="15" y="24" fill="#a5b4fc" font-size="13" font-weight="700" letter-spacing="0.5">LAYER 3: API GATEWAY &amp; BACKEND SERVICES LAYER</text>
+
+    <!-- Top Gateway Sub-Bar -->
+    <g transform="translate(15, 48)">
+      <rect width="530" height="52" rx="8" fill="url(#gatewayGrad)" stroke="#3b82f6" stroke-width="1.5"/>
+      <text x="15" y="24" fill="#ffffff" font-size="13" font-weight="700">🛡️ Unified API Gateway / Reverse Proxy</text>
+      <text x="15" y="42" fill="#93c5fd" font-size="10">
+        Node.js • Express • TypeScript • RESTful Endpoints • JWT Verification • RBAC Enforcement • Rate Limiter
+      </text>
+
+      <!-- Badges on Gateway -->
+      <g transform="translate(380, 12)">
+        <rect width="65" height="26" rx="4" fill="#1e40af" stroke="#60a5fa" stroke-width="1"/>
+        <text x="12" y="17" fill="#dbeafe" font-size="10" font-weight="600">TLS 1.3</text>
+        <rect x="72" width="65" height="26" rx="4" fill="#065f46" stroke="#34d399" stroke-width="1"/>
+        <text x="80" y="17" fill="#d1fae5" font-size="10" font-weight="600">CORS</text>
+      </g>
+    </g>
+
+    <!-- Core Modular Backend Services Grid (11 Services) -->
+    <g transform="translate(15, 110)">
+      <text x="5" y="14" fill="#94a3b8" font-size="11" font-weight="700" letter-spacing="0.5">MICRO / MODULAR DOMAIN SERVICES</text>
+      
+      <!-- Row 1 -->
+      <g transform="translate(0, 24)">
+        <!-- Service 1: Auth & RBAC -->
+        <rect width="170" height="74" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+        <text x="10" y="20" fill="#38bdf8" font-size="11" font-weight="700">1. Auth &amp; RBAC Service</text>
+        <text x="10" y="36" fill="#cbd5e1" font-size="9.5">• JWT token issue &amp; verify</text>
+        <text x="10" y="50" fill="#cbd5e1" font-size="9.5">• Citizen / Officer / Admin</text>
+        <text x="10" y="64" fill="#cbd5e1" font-size="9.5">• Password hash &amp; MFA</text>
+
+        <!-- Service 2: Family Registration -->
+        <g transform="translate(180, 0)">
+          <rect width="170" height="74" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+          <text x="10" y="20" fill="#38bdf8" font-size="11" font-weight="700">2. Family Reg Service</text>
+          <text x="10" y="36" fill="#cbd5e1" font-size="9.5">• Household onboarding</text>
+          <text x="10" y="50" fill="#cbd5e1" font-size="9.5">• Draft &amp; submission state</text>
+          <text x="10" y="64" fill="#cbd5e1" font-size="9.5">• Address &amp; jurisdiction</text>
+        </g>
+
+        <!-- Service 3: Family ID Gen -->
+        <g transform="translate(360, 0)">
+          <rect width="170" height="74" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+          <text x="10" y="20" fill="#38bdf8" font-size="11" font-weight="700">3. Family ID Service</text>
+          <text x="10" y="36" fill="#cbd5e1" font-size="9.5">• Unique FAM-XXXX ID gen</text>
+          <text x="10" y="50" fill="#cbd5e1" font-size="9.5">• Cryptographic checksum</text>
+          <text x="10" y="64" fill="#cbd5e1" font-size="9.5">• QR signature generation</text>
+        </g>
+      </g>
+
+      <!-- Row 2 -->
+      <g transform="translate(0, 108)">
+        <!-- Service 4: Member Mgmt -->
+        <rect width="170" height="74" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+        <text x="10" y="20" fill="#38bdf8" font-size="11" font-weight="700">4. Member Service</text>
+        <text x="10" y="36" fill="#cbd5e1" font-size="9.5">• Member lifecycle states</text>
+        <text x="10" y="50" fill="#cbd5e1" font-size="9.5">• Head transfer logic</text>
+        <text x="10" y="64" fill="#cbd5e1" font-size="9.5">• Freeze verified profiles</text>
+
+        <!-- Service 5: Relationship Mgmt -->
+        <g transform="translate(180, 0)">
+          <rect width="170" height="74" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+          <text x="10" y="20" fill="#38bdf8" font-size="11" font-weight="700">5. Relationship Service</text>
+          <text x="10" y="36" fill="#cbd5e1" font-size="9.5">• Graph relationship store</text>
+          <text x="10" y="50" fill="#cbd5e1" font-size="9.5">• Conflict rule validation</text>
+          <text x="10" y="64" fill="#cbd5e1" font-size="9.5">• Tree generation engine</text>
+        </g>
+
+        <!-- Service 6: Doc Verification -->
+        <g transform="translate(360, 0)">
+          <rect width="170" height="74" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+          <text x="10" y="20" fill="#38bdf8" font-size="11" font-weight="700">6. Doc Verify Service</text>
+          <text x="10" y="36" fill="#cbd5e1" font-size="9.5">• MIME &amp; magic byte check</text>
+          <text x="10" y="50" fill="#cbd5e1" font-size="9.5">• Officer review pipeline</text>
+          <text x="10" y="64" fill="#cbd5e1" font-size="9.5">• Secure signed URLs</text>
+        </g>
+      </g>
+
+      <!-- Row 3 -->
+      <g transform="translate(0, 192)">
+        <!-- Service 7: Duplicate Detection -->
+        <rect width="170" height="74" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.2"/>
+        <text x="10" y="20" fill="#fbbf24" font-size="11" font-weight="700">7. Deduplication Svc</text>
+        <text x="10" y="36" fill="#cbd5e1" font-size="9.5">• Exact + Levenshtein / Jaro</text>
+        <text x="10" y="50" fill="#cbd5e1" font-size="9.5">• BullMQ async queue</text>
+        <text x="10" y="64" fill="#cbd5e1" font-size="9.5">• Cluster match scoring</text>
+
+        <!-- Service 8: Beneficiary & Schemes -->
+        <g transform="translate(180, 0)">
+          <rect width="170" height="74" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.2"/>
+          <text x="10" y="20" fill="#34d399" font-size="11" font-weight="700">8. Scheme &amp; DBT Svc</text>
+          <text x="10" y="36" fill="#cbd5e1" font-size="9.5">• Dynamic rule evaluation</text>
+          <text x="10" y="50" fill="#cbd5e1" font-size="9.5">• Household quota limits</text>
+          <text x="10" y="64" fill="#cbd5e1" font-size="9.5">• Benefit disbursal track</text>
+        </g>
+
+        <!-- Service 9: Notifications -->
+        <g transform="translate(360, 0)">
+          <rect width="170" height="74" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+          <text x="10" y="20" fill="#38bdf8" font-size="11" font-weight="700">9. Notification Svc</text>
+          <text x="10" y="36" fill="#cbd5e1" font-size="9.5">• SMS OTP &amp; WhatsApp</text>
+          <text x="10" y="50" fill="#cbd5e1" font-size="9.5">• Status push webhooks</text>
+          <text x="10" y="64" fill="#cbd5e1" font-size="9.5">• Email alerts &amp; notices</text>
+        </g>
+      </g>
+
+      <!-- Row 4: Audit & Analytics Services -->
+      <g transform="translate(0, 276)">
+        <!-- Service 10: Audit & Activity -->
+        <rect width="255" height="58" rx="6" fill="#1e293b" stroke="#ec4899" stroke-width="1"/>
+        <text x="10" y="18" fill="#f472b6" font-size="11" font-weight="700">10. Audit &amp; Activity Log Service</text>
+        <text x="10" y="34" fill="#cbd5e1" font-size="9.5">• Immutable append-only log capture</text>
+        <text x="10" y="48" fill="#cbd5e1" font-size="9.5">• User + Action + Diff + IP + Reason</text>
+
+        <!-- Service 11: Analytics & Reports -->
+        <g transform="translate(265, 0)">
+          <rect width="265" height="58" rx="6" fill="#1e293b" stroke="#818cf8" stroke-width="1"/>
+          <text x="10" y="18" fill="#a5b4fc" font-size="11" font-weight="700">11. Reporting &amp; Analytics Service</text>
+          <text x="10" y="34" fill="#cbd5e1" font-size="9.5">• Aggregated queries &amp; SLA counters</text>
+          <text x="10" y="48" fill="#cbd5e1" font-size="9.5">• District, Taluka &amp; Scheme KPI sync</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Deep Specialized Core Engines (Family Core, Duplicate Core, Doc Management Core) -->
+    <g transform="translate(15, 460)">
+      
+      <!-- Specialized Engine 1: Family Identity & Relationship Engine -->
+      <g transform="translate(0, 0)">
+        <rect width="530" height="110" rx="8" fill="url(#engineGrad)" stroke="#6366f1" stroke-width="1.5"/>
+        <rect width="530" height="24" rx="8" fill="#6366f1" fill-opacity="0.2"/>
+        <text x="12" y="16" fill="#c7d2fe" font-size="11" font-weight="700">⚙️ CORE ENGINE: Family Identity &amp; Relationship Graph Engine</text>
+        
+        <g transform="translate(10, 32)">
+          <!-- Flow boxes inside engine -->
+          <rect width="88" height="65" rx="4" fill="#1e1b4b" stroke="#818cf8" stroke-width="1"/>
+          <text x="6" y="18" fill="#e0e7ff" font-size="9.5" font-weight="700">1. Family Reg</text>
+          <text x="6" y="34" fill="#a5b4fc" font-size="8.5">• Household init</text>
+          <text x="6" y="46" fill="#a5b4fc" font-size="8.5">• Head election</text>
+          <text x="6" y="58" fill="#a5b4fc" font-size="8.5">• Address history</text>
+
+          <path d="M 90 32 L 102 32" stroke="#818cf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+          <g transform="translate(104, 0)">
+            <rect width="92" height="65" rx="4" fill="#1e1b4b" stroke="#818cf8" stroke-width="1"/>
+            <text x="6" y="18" fill="#e0e7ff" font-size="9.5" font-weight="700">2. Family ID</text>
+            <text x="6" y="34" fill="#a5b4fc" font-size="8.5">• State standard</text>
+            <text x="6" y="46" fill="#a5b4fc" font-size="8.5">• FAM-YYYY-XXXX</text>
+            <text x="6" y="58" fill="#a5b4fc" font-size="8.5">• Checksum code</text>
+          </g>
+
+          <path d="M 198 32 L 210 32" stroke="#818cf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+          <g transform="translate(212, 0)">
+            <rect width="96" height="65" rx="4" fill="#1e1b4b" stroke="#818cf8" stroke-width="1"/>
+            <text x="6" y="18" fill="#e0e7ff" font-size="9.5" font-weight="700">3. Members</text>
+            <text x="6" y="34" fill="#a5b4fc" font-size="8.5">• Tokenized KYC</text>
+            <text x="6" y="46" fill="#a5b4fc" font-size="8.5">• Lifecycle status</text>
+            <text x="6" y="58" fill="#a5b4fc" font-size="8.5">• Migration/Split</text>
+          </g>
+
+          <path d="M 310 32 L 322 32" stroke="#818cf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+          <g transform="translate(324, 0)">
+            <rect width="96" height="65" rx="4" fill="#1e1b4b" stroke="#818cf8" stroke-width="1"/>
+            <text x="6" y="18" fill="#e0e7ff" font-size="9.5" font-weight="700">4. Relations</text>
+            <text x="6" y="34" fill="#a5b4fc" font-size="8.5">• Anti-conflict</text>
+            <text x="6" y="46" fill="#a5b4fc" font-size="8.5">• Age check rules</text>
+            <text x="6" y="58" fill="#a5b4fc" font-size="8.5">• Gender matrix</text>
+          </g>
+
+          <path d="M 422 32 L 434 32" stroke="#818cf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+          <g transform="translate(436, 0)">
+            <rect width="80" height="65" rx="4" fill="#064e3b" stroke="#10b981" stroke-width="1"/>
+            <text x="6" y="18" fill="#d1fae5" font-size="9" font-weight="700">5. Tree Map</text>
+            <text x="6" y="34" fill="#6ee7b7" font-size="8.5">Verified</text>
+            <text x="6" y="46" fill="#6ee7b7" font-size="8.5">Family Tree</text>
+            <text x="6" y="58" fill="#6ee7b7" font-size="8.5">Topology</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- Specialized Engine 2: Duplicate Detection Engine & Document Management Pipeline -->
+      <g transform="translate(0, 118)">
+        <!-- Left: Duplicate Engine -->
+        <rect width="260" height="145" rx="8" fill="#18181b" stroke="#f59e0b" stroke-width="1.2"/>
+        <rect width="260" height="22" rx="8" fill="#f59e0b" fill-opacity="0.2"/>
+        <text x="10" y="16" fill="#fde68a" font-size="10.5" font-weight="700">⚡ Duplicate Detection Pipeline</text>
+        
+        <g transform="translate(8, 28)">
+          <rect width="244" height="26" rx="4" fill="#27272a" stroke="#3f3f46" stroke-width="1"/>
+          <text x="8" y="17" fill="#f4f4f5" font-size="9.5">Exact Match + Fuzzy (Levenshtein) + Soundex</text>
+
+          <path d="M 122 28 L 122 38" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+
+          <rect y="40" width="244" height="26" rx="4" fill="#451a03" stroke="#d97706" stroke-width="1"/>
+          <text x="8" y="57" fill="#fed7aa" font-size="9.5">Duplicate Cluster Queue • Confidence Score %</text>
+
+          <path d="M 122 68 L 122 78" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+
+          <rect y="80" width="244" height="30" rx="4" fill="#052e16" stroke="#16a34a" stroke-width="1"/>
+          <text x="8" y="96" fill="#bbf7d0" font-size="9.5" font-weight="600">Officer Review → Merge / Reject / Verify</text>
+        </g>
+
+        <!-- Right: Document Management -->
+        <g transform="translate(270, 0)">
+          <rect width="260" height="145" rx="8" fill="#18181b" stroke="#0ea5e9" stroke-width="1.2"/>
+          <rect width="260" height="22" rx="8" fill="#0ea5e9" fill-opacity="0.2"/>
+          <text x="10" y="16" fill="#bae6fd" font-size="10.5" font-weight="700">📑 Secure Document Pipeline</text>
+
+          <g transform="translate(8, 28)">
+            <rect width="244" height="26" rx="4" fill="#0c4a6e" stroke="#0284c7" stroke-width="1"/>
+            <text x="8" y="17" fill="#e0f2fe" font-size="9.5">Upload Stream → ClamAV / MIME Validation</text>
+
+            <path d="M 122 28 L 122 38" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+            <rect y="40" width="244" height="26" rx="4" fill="#1e293b" stroke="#0284c7" stroke-width="1"/>
+            <text x="8" y="57" fill="#e0f2fe" font-size="9.5">Encrypt &amp; Stream → Secure Object Storage</text>
+
+            <path d="M 122 68 L 122 78" stroke="#38bdf8" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+            <rect y="80" width="244" height="30" rx="4" fill="#0f172a" stroke="#059669" stroke-width="1"/>
+            <text x="8" y="96" fill="#a7f3d0" font-size="9.5" font-weight="600">Store Metadata Only → Signed URL Inspector</text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= COLUMN 4: DATA, STORAGE & IDENTITY VERIFICATION (LAYER 4) ================= -->
+  <g transform="translate(1130, 95)">
+    <rect width="360" height="740" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5" filter="url(#cardShadow)"/>
+    
+    <!-- Header -->
+    <rect width="360" height="38" rx="12" fill="#059669" fill-opacity="0.3"/>
+    <text x="15" y="24" fill="#34d399" font-size="13" font-weight="700" letter-spacing="0.5">LAYER 4: DATA, STORAGE &amp; ID VERIFICATION</text>
+
+    <!-- Top: Identity Verification External Gateway Bridge -->
+    <g transform="translate(12, 48)">
+      <rect width="336" height="150" rx="8" fill="#132035" stroke="#3b82f6" stroke-width="1.2"/>
+      <rect width="336" height="24" rx="8" fill="#1d4ed8" fill-opacity="0.3"/>
+      <text x="10" y="17" fill="#93c5fd" font-size="11" font-weight="700">🆔 Identity Verification Gateway (Zero Raw-PII)</text>
+
+      <g transform="translate(8, 30)">
+        <rect width="155" height="24" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="6" y="16" fill="#e2e8f0" font-size="9">🏛️ Approved Identity API</text>
+
+        <rect x="165" width="155" height="24" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="171" y="16" fill="#e2e8f0" font-size="9">🌾 Ration Card Registry</text>
+
+        <rect y="30" width="155" height="24" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="6" y="46" fill="#e2e8f0" font-size="9">👶 Birth / Death Registry</text>
+
+        <rect x="165" y="30" width="155" height="24" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="171" y="46" fill="#e2e8f0" font-size="9">📜 Legal Affidavit API</text>
+      </g>
+
+      <!-- Tokenization Transformation Callout -->
+      <g transform="translate(8, 90)">
+        <rect width="320" height="48" rx="6" fill="#042f2e" stroke="#0d9488" stroke-width="1"/>
+        <text x="8" y="17" fill="#5eead4" font-size="9.5" font-weight="700">Citizen Identity → Secure Tokenized Reference ID</text>
+        <text x="8" y="32" fill="#ccfbf1" font-size="8.5">
+          "Minimum necessary identity data • Tokenized references • Encrypted channel"
+        </text>
+        <text x="8" y="43" fill="#99f6e4" font-size="8" font-style="italic">
+          * Strictly NO raw National / Aadhaar numbers stored in database *
+        </text>
+      </g>
+    </g>
+
+    <!-- Middle: Relational Database (PostgreSQL / MySQL) -->
+    <g transform="translate(12, 208)">
+      <rect width="336" height="280" rx="8" fill="url(#dbGrad)" stroke="#10b981" stroke-width="1.5"/>
+      <rect width="336" height="26" rx="8" fill="#10b981" fill-opacity="0.25"/>
+      <text x="10" y="18" fill="#a7f3d0" font-size="11.5" font-weight="700">🗄️ Relational Primary Store (PostgreSQL / MySQL)</text>
+
+      <!-- Schema Tables Grid -->
+      <g transform="translate(10, 34)">
+        <g transform="translate(0, 0)">
+          <rect width="98" height="30" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+          <text x="6" y="19" fill="#ffffff" font-size="9.5" font-weight="600">📑 Family</text>
+        </g>
+        <g transform="translate(108, 0)">
+          <rect width="102" height="30" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+          <text x="6" y="19" fill="#ffffff" font-size="9.5" font-weight="600">👥 FamilyMember</text>
+        </g>
+        <g transform="translate(218, 0)">
+          <rect width="98" height="30" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+          <text x="6" y="19" fill="#ffffff" font-size="9.5" font-weight="600">🔗 Relationship</text>
+        </g>
+
+        <g transform="translate(0, 36)">
+          <rect width="98" height="30" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+          <text x="6" y="19" fill="#ffffff" font-size="9.5" font-weight="600">🔑 IdentityRef</text>
+        </g>
+        <g transform="translate(108, 36)">
+          <rect width="102" height="30" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+          <text x="6" y="19" fill="#ffffff" font-size="9.5" font-weight="600">📍 Address</text>
+        </g>
+        <g transform="translate(218, 36)">
+          <rect width="98" height="30" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+          <text x="6" y="19" fill="#ffffff" font-size="9.5" font-weight="600">📄 DocumentMeta</text>
+        </g>
+
+        <g transform="translate(0, 72)">
+          <rect width="98" height="30" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+          <text x="6" y="19" fill="#ffffff" font-size="9.5" font-weight="600">✅ Verification</text>
+        </g>
+        <g transform="translate(108, 72)">
+          <rect width="102" height="30" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+          <text x="6" y="19" fill="#ffffff" font-size="9.5" font-weight="600">🎁 Scheme</text>
+        </g>
+        <g transform="translate(218, 72)">
+          <rect width="98" height="30" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+          <text x="6" y="19" fill="#ffffff" font-size="9.5" font-weight="600">🎯 Beneficiary</text>
+        </g>
+
+        <g transform="translate(0, 108)">
+          <rect width="98" height="30" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+          <text x="6" y="19" fill="#ffffff" font-size="9.5" font-weight="600">📝 Application</text>
+        </g>
+        <g transform="translate(108, 108)">
+          <rect width="102" height="30" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+          <text x="6" y="19" fill="#ffffff" font-size="9.5" font-weight="600">💳 BenefitDisbursal</text>
+        </g>
+        <g transform="translate(218, 108)">
+          <rect width="98" height="30" rx="4" fill="#065f46" stroke="#34d399" stroke-width="0.8"/>
+          <text x="6" y="19" fill="#ffffff" font-size="9.5" font-weight="600">👮 Officer</text>
+        </g>
+
+        <g transform="translate(0, 144)">
+          <rect width="316" height="32" rx="4" fill="#831843" stroke="#ec4899" stroke-width="1"/>
+          <text x="12" y="21" fill="#fce7f3" font-size="10.5" font-weight="700">🔒 AuditLog (Append-Only Immutable Ledger)</text>
+        </g>
+
+        <g transform="translate(0, 184)">
+          <rect width="316" height="48" rx="4" fill="#022c22" stroke="#059669" stroke-width="1"/>
+          <text x="8" y="16" fill="#6ee7b7" font-size="9" font-weight="600">Database Engine Properties:</text>
+          <text x="8" y="30" fill="#a7f3d0" font-size="8.5">• ACID Compliance • Multi-AZ Replication • Automatic Backups</text>
+          <text x="8" y="42" fill="#a7f3d0" font-size="8.5">• AES-256 Tablespace Encryption at Rest • Foreign Key Graph Integrity</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Cache Layer: Redis -->
+    <g transform="translate(12, 498)">
+      <rect width="336" height="105" rx="8" fill="url(#redisGrad)" stroke="#ef4444" stroke-width="1.2"/>
+      <rect width="336" height="24" rx="8" fill="#dc2626" fill-opacity="0.3"/>
+      <text x="10" y="17" fill="#fecaca" font-size="11" font-weight="700">⚡ In-Memory Cache &amp; Queue (Redis Cluster)</text>
+
+      <g transform="translate(10, 32)">
+        <text x="5" y="14" fill="#fee2e2" font-size="9.5">• High-Speed Family ID &amp; Profile Cache (TTL-managed)</text>
+        <text x="5" y="30" fill="#fee2e2" font-size="9.5">• User Session Store &amp; Token Revocation Blacklist</text>
+        <text x="5" y="46" fill="#fee2e2" font-size="9.5">• API Rate Limiting Bucket Store (IP / Citizen / Officer)</text>
+        <text x="5" y="62" fill="#fee2e2" font-size="9.5">• BullMQ Job Queues (Async Deduplication &amp; Notifications)</text>
+      </g>
+    </g>
+
+    <!-- Object Storage: S3-Compatible Storage -->
+    <g transform="translate(12, 613)">
+      <rect width="336" height="115" rx="8" fill="url(#storageGrad)" stroke="#f59e0b" stroke-width="1.2"/>
+      <rect width="336" height="24" rx="8" fill="#d97706" fill-opacity="0.3"/>
+      <text x="10" y="17" fill="#fef3c7" font-size="11" font-weight="700">📦 Secure Document Storage (S3-Compatible)</text>
+
+      <g transform="translate(10, 32)">
+        <text x="5" y="14" fill="#fed7aa" font-size="9.5">• Server-Side Encrypted (SSE-KMS / AES-256)</text>
+        <text x="5" y="30" fill="#fed7aa" font-size="9.5">• Time-Limited Short-Lived Pre-Signed URLs (60s)</text>
+        <text x="5" y="46" fill="#fed7aa" font-size="9.5">• Isolated from Relational DB (Stores Object Key only)</text>
+        <text x="5" y="62" fill="#fed7aa" font-size="9.5">• Proofs: Identity, Ration, Birth Cert, Affidavit, Address</text>
+        <text x="5" y="76" fill="#fed7aa" font-size="9.5">• Immutable Versioning &amp; WORM Policy for Compliance</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= COLUMN 5: EXTERNAL GOVT SCHEMES & ANALYTICS (LAYER 5) ================= -->
+  <g transform="translate(1510, 95)">
+    <rect width="380" height="740" rx="12" fill="url(#extGrad)" stroke="#334155" stroke-width="1.5" filter="url(#cardShadow)"/>
+    
+    <!-- Header -->
+    <rect width="380" height="38" rx="12" fill="#d97706" fill-opacity="0.3"/>
+    <text x="15" y="24" fill="#fbbf24" font-size="13" font-weight="700" letter-spacing="0.5">LAYER 5: GOVT SCHEMES &amp; ANALYTICS</text>
+
+    <!-- External Welfare Schemes Grid -->
+    <g transform="translate(12, 48)">
+      <rect width="356" height="295" rx="8" fill="#0b1329" stroke="#f59e0b" stroke-width="1.2"/>
+      <rect width="356" height="26" rx="8" fill="#f59e0b" fill-opacity="0.2"/>
+      <text x="10" y="18" fill="#fde68a" font-size="11.5" font-weight="700">🏛️ External Government Welfare Systems</text>
+
+      <g transform="translate(8, 34)">
+        <!-- Scheme 1 -->
+        <rect width="165" height="45" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="8" y="18" fill="#f8fafc" font-size="10" font-weight="600">🌾 Ration / NFSA</text>
+        <text x="8" y="34" fill="#94a3b8" font-size="8.5">Food Security &amp; Grain Quota</text>
+
+        <!-- Scheme 2 -->
+        <g transform="translate(175, 0)">
+          <rect width="165" height="45" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="8" y="18" fill="#f8fafc" font-size="10" font-weight="600">🏠 Housing Schemes</text>
+          <text x="8" y="34" fill="#94a3b8" font-size="8.5">PMAY &amp; Rural Shelter Grants</text>
+        </g>
+
+        <!-- Scheme 3 -->
+        <g transform="translate(0, 52)">
+          <rect width="165" height="45" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="8" y="18" fill="#f8fafc" font-size="10" font-weight="600">🎓 Education Scholarships</text>
+          <text x="8" y="34" fill="#94a3b8" font-size="8.5">Direct Student Benefit Transfer</text>
+        </g>
+
+        <!-- Scheme 4 -->
+        <g transform="translate(175, 52)">
+          <rect width="165" height="45" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="8" y="18" fill="#f8fafc" font-size="10" font-weight="600">🏥 Health &amp; Insurance</text>
+          <text x="8" y="34" fill="#94a3b8" font-size="8.5">PM-JAY &amp; Tertiary Care</text>
+        </g>
+
+        <!-- Scheme 5 -->
+        <g transform="translate(0, 104)">
+          <rect width="165" height="45" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="8" y="18" fill="#f8fafc" font-size="10" font-weight="600">👵 Pension &amp; Senior Care</text>
+          <text x="8" y="34" fill="#94a3b8" font-size="8.5">Old Age, Disability, Widow</text>
+        </g>
+
+        <!-- Scheme 6 -->
+        <g transform="translate(175, 104)">
+          <rect width="165" height="45" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="8" y="18" fill="#f8fafc" font-size="10" font-weight="600">🚜 Agriculture &amp; Farmers</text>
+          <text x="8" y="34" fill="#94a3b8" font-size="8.5">PM-KISAN Crop Subsidies</text>
+        </g>
+
+        <!-- Scheme Bridge Info -->
+        <g transform="translate(0, 158)">
+          <rect width="340" height="92" rx="6" fill="#182234" stroke="#0284c7" stroke-width="1"/>
+          <text x="10" y="18" fill="#38bdf8" font-size="10" font-weight="700">Scheme Integration Gateway:</text>
+          <text x="10" y="34" fill="#cbd5e1" font-size="9">• Family ID Token → Beneficiary Mapping Engine</text>
+          <text x="10" y="48" fill="#cbd5e1" font-size="9">• Automated Rule Engine (Income, Caste, Land, Age)</text>
+          <text x="10" y="62" fill="#cbd5e1" font-size="9">• Direct API Query &amp; Asynchronous Webhooks</text>
+          <text x="10" y="76" fill="#cbd5e1" font-size="9">• Prevents Ghost Claimants &amp; Duplicate Beneficiaries</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Notification Service Gateways -->
+    <g transform="translate(12, 353)">
+      <rect width="356" height="150" rx="8" fill="#0b1329" stroke="#38bdf8" stroke-width="1.2"/>
+      <rect width="356" height="24" rx="8" fill="#0284c7" fill-opacity="0.2"/>
+      <text x="10" y="17" fill="#7dd3fc" font-size="11" font-weight="700">📢 Notification Delivery Gateways</text>
+
+      <g transform="translate(8, 32)">
+        <rect width="105" height="32" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="8" y="20" fill="#f8fafc" font-size="9.5">📲 SMS / DLT OTP</text>
+
+        <rect x="115" width="110" height="32" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="122" y="20" fill="#f8fafc" font-size="9.5">📧 Email Services</text>
+
+        <rect x="235" width="105" height="32" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="242" y="20" fill="#f8fafc" font-size="9.5">💬 WhatsApp API</text>
+
+        <!-- Triggers list -->
+        <g transform="translate(0, 40)">
+          <rect width="340" height="68" rx="4" fill="#1e293b" stroke="#475569" stroke-width="0.8"/>
+          <text x="8" y="15" fill="#94a3b8" font-size="8.5" font-weight="700">LIFECYCLE EVENT TRIGGERS:</text>
+          <text x="8" y="30" fill="#e2e8f0" font-size="8.5">• Family Verified • Doc Rejected • Duplicate Flagged</text>
+          <text x="8" y="44" fill="#e2e8f0" font-size="8.5">• Relationship Approved • Scheme Eligible Match</text>
+          <text x="8" y="58" fill="#e2e8f0" font-size="8.5">• DBT Disbursal Alert • Officer Audit Escalation</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Analytics & Intelligence Dashboard Engine -->
+    <g transform="translate(12, 513)">
+      <rect width="356" height="215" rx="8" fill="#0b1329" stroke="#818cf8" stroke-width="1.2"/>
+      <rect width="356" height="24" rx="8" fill="#6366f1" fill-opacity="0.2"/>
+      <text x="10" y="17" fill="#c7d2fe" font-size="11" font-weight="700">📊 Analytics &amp; Reporting Engine</text>
+
+      <g transform="translate(8, 30)">
+        <rect width="165" height="34" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+        <text x="8" y="16" fill="#f8fafc" font-size="9.5" font-weight="600">🏛️ State / District KPI</text>
+        <text x="8" y="28" fill="#94a3b8" font-size="8">Coverage % &amp; Verification rate</text>
+
+        <g transform="translate(175, 0)">
+          <rect width="165" height="34" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="8" y="16" fill="#f8fafc" font-size="9.5" font-weight="600">🏘️ Taluka / Ward Map</text>
+          <text x="8" y="28" fill="#94a3b8" font-size="8">Local backlog &amp; SLA heatmap</text>
+        </g>
+
+        <g transform="translate(0, 40)">
+          <rect width="165" height="34" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="8" y="16" fill="#f8fafc" font-size="9.5" font-weight="600">⚠️ Fraud &amp; Duplicate KPI</text>
+          <text x="8" y="28" fill="#94a3b8" font-size="8">Cluster trends &amp; anomalies</text>
+        </g>
+
+        <g transform="translate(175, 40)">
+          <rect width="165" height="34" rx="4" fill="#1e293b" stroke="#334155" stroke-width="1"/>
+          <text x="8" y="16" fill="#f8fafc" font-size="9.5" font-weight="600">💰 DBT Scheme Saturation</text>
+          <text x="8" y="28" fill="#94a3b8" font-size="8">Disbursals vs Entitlements</text>
+        </g>
+
+        <!-- Tech Stack for Analytics -->
+        <g transform="translate(0, 82)">
+          <rect width="340" height="90" rx="4" fill="#1e293b" stroke="#475569" stroke-width="0.8"/>
+          <text x="8" y="16" fill="#a5b4fc" font-size="9" font-weight="700">ANALYTICS PIPELINE &amp; VISUALIZATION:</text>
+          <text x="8" y="32" fill="#cbd5e1" font-size="8.5">• Materialized SQL Views &amp; Read-Replicas</text>
+          <text x="8" y="46" fill="#cbd5e1" font-size="8.5">• Chart.js / Recharts Dynamic Visual Dashboards</text>
+          <text x="8" y="60" fill="#cbd5e1" font-size="8.5">• Automated Weekly PDF/Excel Disbursal Digests</text>
+          <text x="8" y="74" fill="#cbd5e1" font-size="8.5">• Real-time Audit &amp; Officer Performance Monitoring</text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= INTER-LAYER DATA FLOW ARROWS (CRISP SVG PATHS) ================= -->
+  <!-- Layer 1 to Layer 2 -->
+  <path d="M 250 200 L 270 200" stroke="#38bdf8" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 250 360 L 270 360" stroke="#10b981" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <path d="M 250 490 L 270 490" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <path d="M 250 640 L 270 640" stroke="#818cf8" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Layer 2 to Layer 3 (API Gateway HTTPS) -->
+  <path d="M 530 220 L 565 120" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <path d="M 530 500 L 565 120" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+  <!-- HTTPS Security Label between Layer 2 and 3 -->
+  <g transform="translate(505, 75)">
+    <rect width="70" height="20" rx="4" fill="#0f172a" stroke="#38bdf8" stroke-width="1"/>
+    <text x="7" y="14" fill="#38bdf8" font-size="9" font-weight="700">🔒 HTTPS/TLS</text>
+  </g>
+
+  <!-- Layer 3 to Layer 4 (Backend to DB/Cache/Storage) -->
+  <path d="M 1110 200 L 1142 270" stroke="#10b981" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <path d="M 1110 330 L 1142 550" stroke="#ef4444" stroke-width="2" marker-end="url(#arrowOrange)"/>
+  <path d="M 1110 660 L 1142 660" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowOrange)"/>
+
+  <!-- Layer 3 to Layer 5 (Backend to External Systems) -->
+  <path d="M 1110 400 C 1200 400, 1400 200, 1510 200" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrowOrange)"/>
+  <path d="M 1110 420 C 1200 420, 1400 420, 1510 420" stroke="#38bdf8" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+  <path d="M 1110 440 C 1200 440, 1400 600, 1510 600" stroke="#818cf8" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow)"/>
+
+  <!-- ================= HORIZONTAL SECURITY & AUDIT GOVERNANCE LAYER (BOTTOM BAR 1) ================= -->
+  <g transform="translate(30, 845)">
+    <rect width="1860" height="95" rx="10" fill="url(#securityGrad)" stroke="#f472b6" stroke-width="1.5" filter="url(#cardShadow)"/>
+    <rect width="1860" height="24" rx="10" fill="#831843" fill-opacity="0.5"/>
+    <text x="20" y="17" fill="#fdf2f8" font-size="12" font-weight="700" letter-spacing="0.5">
+      🔒 CROSS-CUTTING SECURITY, COMPLIANCE &amp; AUDIT GOVERNANCE LAYER (ZERO TRUST)
+    </text>
+
+    <!-- Security Controls Grid -->
+    <g transform="translate(20, 32)">
+      <!-- Box 1 -->
+      <rect width="340" height="52" rx="6" fill="#500724" stroke="#db2777" stroke-width="1"/>
+      <text x="10" y="18" fill="#fbcfe8" font-size="10" font-weight="700">🛡️ Transport &amp; Storage Cryptography</text>
+      <text x="10" y="32" fill="#fdf2f8" font-size="9">• TLS 1.3 in Transit • AES-256 at Rest</text>
+      <text x="10" y="44" fill="#fdf2f8" font-size="9">• Pre-signed expiring URLs • Zero raw PII in DB</text>
+
+      <!-- Box 2 -->
+      <g transform="translate(355, 0)">
+        <rect width="360" height="52" rx="6" fill="#500724" stroke="#db2777" stroke-width="1"/>
+        <text x="10" y="18" fill="#fbcfe8" font-size="10" font-weight="700">👥 Access Control &amp; Edge Protection</text>
+        <text x="10" y="32" fill="#fdf2f8" font-size="9">• Strict RBAC (Citizen, Officer, Admin, Scheme)</text>
+        <text x="10" y="44" fill="#fdf2f8" font-size="9">• IP Bucket Rate Limiting • OWASP Sanitization</text>
+      </g>
+
+      <!-- Box 3: Immutable Audit Trail Standard -->
+      <g transform="translate(730, 0)">
+        <rect width="720" height="52" rx="6" fill="#500724" stroke="#f472b6" stroke-width="1.2"/>
+        <text x="10" y="18" fill="#fbcfe8" font-size="10" font-weight="700">📜 Mandatory Immutable Audit Record Pipeline</text>
+        
+        <!-- Small Chain in Audit -->
+        <g transform="translate(10, 26)">
+          <rect width="70" height="20" rx="3" fill="#831843"/>
+          <text x="8" y="14" fill="#ffffff" font-size="8.5" font-weight="600">Actor / IP</text>
+          <text x="74" y="14" fill="#f472b6" font-size="10">→</text>
+
+          <rect x="85" width="85" height="20" rx="3" fill="#831843"/>
+          <text x="93" y="14" fill="#ffffff" font-size="8.5" font-weight="600">Action Type</text>
+          <text x="174" y="14" fill="#f472b6" font-size="10">→</text>
+
+          <rect x="185" width="90" height="20" rx="3" fill="#831843"/>
+          <text x="192" y="14" fill="#ffffff" font-size="8.5" font-weight="600">UTC Timestamp</text>
+          <text x="279" y="14" fill="#f472b6" font-size="10">→</text>
+
+          <rect x="290" width="85" height="20" rx="3" fill="#831843"/>
+          <text x="296" y="14" fill="#ffffff" font-size="8.5" font-weight="600">Prev Value</text>
+          <text x="379" y="14" fill="#f472b6" font-size="10">→</text>
+
+          <rect x="390" width="85" height="20" rx="3" fill="#831843"/>
+          <text x="396" y="14" fill="#ffffff" font-size="8.5" font-weight="600">New Value</text>
+          <text x="479" y="14" fill="#f472b6" font-size="10">→</text>
+
+          <rect x="490" width="105" height="20" rx="3" fill="#831843"/>
+          <text x="496" y="14" fill="#ffffff" font-size="8.5" font-weight="600">Officer Reason</text>
+          <text x="599" y="14" fill="#f472b6" font-size="10">→</text>
+
+          <rect x="610" width="95" height="20" rx="3" fill="#065f46" stroke="#34d399" stroke-width="1"/>
+          <text x="618" y="14" fill="#d1fae5" font-size="8.5" font-weight="700">AuditLog Table</text>
+        </g>
+      </g>
+
+      <!-- Box 4: DR & Backups -->
+      <g transform="translate(1465, 0)">
+        <rect width="355" height="52" rx="6" fill="#500724" stroke="#db2777" stroke-width="1"/>
+        <text x="10" y="18" fill="#fbcfe8" font-size="10" font-weight="700">💾 Reliability &amp; Compliance</text>
+        <text x="10" y="32" fill="#fdf2f8" font-size="9">• Point-in-time Recovery • Read-Replicas</text>
+        <text x="10" y="44" fill="#fdf2f8" font-size="9">• Automated Disaster Recovery • ISO 27001</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= END-TO-END PRIMARY LIFECYCLE FLOW STRIP (BOTTOM BAR 2) ================= -->
+  <g transform="translate(30, 950)">
+    <rect width="1860" height="70" rx="10" fill="#0f172a" stroke="#334155" stroke-width="1.5" filter="url(#cardShadow)"/>
+    
+    <!-- Title -->
+    <text x="15" y="20" fill="#38bdf8" font-size="11" font-weight="700" letter-spacing="0.5">
+      PRIMARY END-TO-END LIFECYCLE FLOW:
+    </text>
+
+    <!-- 15 Flow Step Pills -->
+    <g transform="translate(15, 30)">
+      <!-- Step 1 -->
+      <rect width="90" height="30" rx="4" fill="#1e293b" stroke="#0284c7" stroke-width="1"/>
+      <text x="6" y="19" fill="#e0f2fe" font-size="9" font-weight="600">1. Citizen Auth</text>
+      <text x="93" y="19" fill="#64748b" font-size="10">→</text>
+
+      <!-- Step 2 -->
+      <g transform="translate(105, 0)">
+        <rect width="95" height="30" rx="4" fill="#1e293b" stroke="#0284c7" stroke-width="1"/>
+        <text x="6" y="19" fill="#e0f2fe" font-size="9" font-weight="600">2. ID Tokenize</text>
+        <text x="98" y="19" fill="#64748b" font-size="10">→</text>
+      </g>
+
+      <!-- Step 3 -->
+      <g transform="translate(215, 0)">
+        <rect width="100" height="30" rx="4" fill="#1e293b" stroke="#0284c7" stroke-width="1"/>
+        <text x="6" y="19" fill="#e0f2fe" font-size="9" font-weight="600">3. Family Reg</text>
+        <text x="103" y="19" fill="#64748b" font-size="10">→</text>
+      </g>
+
+      <!-- Step 4 -->
+      <g transform="translate(330, 0)">
+        <rect width="105" height="30" rx="4" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+        <text x="6" y="19" fill="#fef3c7" font-size="9" font-weight="600">4. Deduplication</text>
+        <text x="108" y="19" fill="#64748b" font-size="10">→</text>
+      </g>
+
+      <!-- Step 5 -->
+      <g transform="translate(450, 0)">
+        <rect width="100" height="30" rx="4" fill="#1e293b" stroke="#0284c7" stroke-width="1"/>
+        <text x="6" y="19" fill="#e0f2fe" font-size="9" font-weight="600">5. Family ID Gen</text>
+        <text x="103" y="19" fill="#64748b" font-size="10">→</text>
+      </g>
+
+      <!-- Step 6 -->
+      <g transform="translate(565, 0)">
+        <rect width="95" height="30" rx="4" fill="#1e293b" stroke="#0284c7" stroke-width="1"/>
+        <text x="6" y="19" fill="#e0f2fe" font-size="9" font-weight="600">6. Add Members</text>
+        <text x="98" y="19" fill="#64748b" font-size="10">→</text>
+      </g>
+
+      <!-- Step 7 -->
+      <g transform="translate(675, 0)">
+        <rect width="105" height="30" rx="4" fill="#1e293b" stroke="#6366f1" stroke-width="1"/>
+        <text x="6" y="19" fill="#e0e7ff" font-size="9" font-weight="600">7. Claim Relations</text>
+        <text x="108" y="19" fill="#64748b" font-size="10">→</text>
+      </g>
+
+      <!-- Step 8 -->
+      <g transform="translate(795, 0)">
+        <rect width="100" height="30" rx="4" fill="#1e293b" stroke="#0284c7" stroke-width="1"/>
+        <text x="6" y="19" fill="#e0f2fe" font-size="9" font-weight="600">8. Doc Upload</text>
+        <text x="103" y="19" fill="#64748b" font-size="10">→</text>
+      </g>
+
+      <!-- Step 9 -->
+      <g transform="translate(910, 0)">
+        <rect width="105" height="30" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+        <text x="6" y="19" fill="#d1fae5" font-size="9" font-weight="600">9. Officer Review</text>
+        <text x="108" y="19" fill="#64748b" font-size="10">→</text>
+      </g>
+
+      <!-- Step 10 -->
+      <g transform="translate(1030, 0)">
+        <rect width="105" height="30" rx="4" fill="#064e3b" stroke="#34d399" stroke-width="1.2"/>
+        <text x="6" y="19" fill="#a7f3d0" font-size="9" font-weight="700">10. Verified Profile</text>
+        <text x="108" y="19" fill="#64748b" font-size="10">→</text>
+      </g>
+
+      <!-- Step 11 -->
+      <g transform="translate(1150, 0)">
+        <rect width="105" height="30" rx="4" fill="#1e293b" stroke="#6366f1" stroke-width="1"/>
+        <text x="6" y="19" fill="#e0e7ff" font-size="9" font-weight="600">11. Visual Tree</text>
+        <text x="108" y="19" fill="#64748b" font-size="10">→</text>
+      </g>
+
+      <!-- Step 12 -->
+      <g transform="translate(1270, 0)">
+        <rect width="110" height="30" rx="4" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+        <text x="6" y="19" fill="#fef3c7" font-size="9" font-weight="600">12. Scheme Match</text>
+        <text x="113" y="19" fill="#64748b" font-size="10">→</text>
+      </g>
+
+      <!-- Step 13 -->
+      <g transform="translate(1395, 0)">
+        <rect width="105" height="30" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+        <text x="6" y="19" fill="#d1fae5" font-size="9" font-weight="600">13. DBT Disbursal</text>
+        <text x="108" y="19" fill="#64748b" font-size="10">→</text>
+      </g>
+
+      <!-- Step 14 -->
+      <g transform="translate(1515, 0)">
+        <rect width="105" height="30" rx="4" fill="#1e293b" stroke="#38bdf8" stroke-width="1"/>
+        <text x="6" y="19" fill="#e0f2fe" font-size="9" font-weight="600">14. Notification</text>
+        <text x="108" y="19" fill="#64748b" font-size="10">→</text>
+      </g>
+
+      <!-- Step 15 -->
+      <g transform="translate(1635, 0)">
+        <rect width="190" height="30" rx="4" fill="#500724" stroke="#ec4899" stroke-width="1.2"/>
+        <text x="10" y="19" fill="#fce7f3" font-size="9.5" font-weight="700">15. Audit &amp; Analytics Sync</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- ================= BOTTOM LEGEND & FOOTER ================= -->
+  <g transform="translate(30, 1030)">
+    <!-- Legend Items -->
+    <g transform="translate(20, 16)">
+      <!-- Item 1: Solid Arrow -->
+      <path d="M 0 0 L 25 0" stroke="#38bdf8" stroke-width="2.5" marker-end="url(#arrow)"/>
+      <text x="35" y="4" fill="#e2e8f0" font-size="11" font-weight="600">Solid Arrow = API / Data Flow</text>
+
+      <!-- Item 2: Dashed Arrow -->
+      <g transform="translate(260, 0)">
+        <path d="M 0 0 L 25 0" stroke="#fbbf24" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrowOrange)"/>
+        <text x="35" y="4" fill="#e2e8f0" font-size="11" font-weight="600">Dashed Arrow = External Integration</text>
+      </g>
+
+      <!-- Item 3: Lock Icon -->
+      <g transform="translate(560, 0)">
+        <text x="0" y="4" fill="#f472b6" font-size="13">🔒</text>
+        <text x="22" y="4" fill="#e2e8f0" font-size="11" font-weight="600">Lock Icon = Security Boundary &amp; Governance</text>
+      </g>
+
+      <!-- Item 4: Database Icon -->
+      <g transform="translate(900, 0)">
+        <text x="0" y="4" fill="#34d399" font-size="13">🗄️</text>
+        <text x="22" y="4" fill="#e2e8f0" font-size="11" font-weight="600">Database Icon = Persistent Storage Layer</text>
+      </g>
+
+      <!-- System Architecture Compliance Badge -->
+      <g transform="translate(1320, -5)">
+        <rect width="500" height="26" rx="4" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+        <text x="12" y="17" fill="#94a3b8" font-size="10.5">
+          Standard: Digital Public Infrastructure (DPI) • Open Standards • High Availability
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

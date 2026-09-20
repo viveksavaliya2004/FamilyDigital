@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Architecture — Family Identity &amp; Beneficiary Platform</title>
+  <style>
+    :root {
+      --bg-color: #0b1120;
+      --card-bg: #1e293b;
+      --border-color: #334155;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-green: #34d399;
+      --accent-pink: #f472b6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #0f172a;
+      border-bottom: 1px solid var(--border-color);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .title-group h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .title-group p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .actions {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    button {
+      background: #1e293b;
+      color: #e2e8f0;
+      border: 1px solid #475569;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.2s ease;
+    }
+
+    button:hover {
+      background: #334155;
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    button.primary {
+      background: #0284c7;
+      border-color: #38bdf8;
+      color: #fff;
+    }
+
+    button.primary:hover {
+      background: #0369a1;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem;
+      gap: 1.5rem;
+      max-width: 1920px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .viewer-card {
+      background: #0f172a;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    .viewer-toolbar {
+      background: #1e293b;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .zoom-controls {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .viewport {
+      width: 100%;
+      height: 75vh;
+      overflow: hidden;
+      position: relative;
+      cursor: grab;
+      background: #070d19;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .viewport:active {
+      cursor: grabbing;
+    }
+
+    #svgWrapper {
+      transform-origin: center center;
+      transition: transform 0.1s ease-out;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #svgWrapper svg {
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .spec-card {
+      background: #1e293b;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+
+    .spec-card h3 {
+      font-size: 1rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .spec-card ul {
+      list-style-type: none;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #cbd5e1;
+    }
+
+    .spec-card li::before {
+      content: "•";
+      color: var(--accent-green);
+      font-weight: bold;
+      display: inline-block;
+      width: 1em;
+      margin-left: -1em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="title-group">
+      <h1>🏛️ Family Identity &amp; Beneficiary Platform — System Architecture</h1>
+      <p>16:9 Landscape High-Definition Interactive Architecture Diagram (Production Specification)</p>
+    </div>
+    <div class="actions">
+      <button onclick="zoomIn()">➕ Zoom In</button>
+      <button onclick="zoomOut()">➖ Zoom Out</button>
+      <button onclick="resetZoom()">🔄 Fit / Reset</button>
+      <button class="primary" onclick="downloadSVG()">📥 Download SVG</button>
+      <button class="primary" onclick="exportPNG()">🖼️ Export High-Res PNG</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="viewer-card">
+      <div class="viewer-toolbar">
+        <span>💡 Hint: Use mouse wheel to zoom, drag to pan across layers, or use toolbar buttons.</span>
+        <span id="zoomLevel">Zoom: 100%</span>
+      </div>
+      <div class="viewport" id="viewport">
+        <div id="svgWrapper">
+          <!-- Inlined SVG Object for Full Resolution Rendering -->
+          <object id="svgObject" data="architecture-diagram.svg" type="image/svg+xml" style="width:100%; height:100%;"></object>
+        </div>
+      </div>
+    </div>
+
+    <div class="specs-grid">
+      <div class="spec-card">
+        <h3>1. Actor &amp; Presentation Layer</h3>
+        <ul>
+          <li><strong>Citizens / Heads:</strong> Self-service registration, family tree visualization (React Flow), document upload, scheme discovery.</li>
+          <li><strong>Officers &amp; Admins:</strong> Multi-tiered review queues, side-by-side document scrutiny, deduplication resolution, GIS metrics.</li>
+          <li><strong>Tech:</strong> React 18, TypeScript, Tailwind CSS, React Flow, Axios, Vite.</li>
+        </ul>
+      </div>
+
+      <div class="spec-card">
+        <h3>2. Backend Micro-Modules &amp; Core Engines</h3>
+        <ul>
+          <li><strong>Gateway:</strong> Node.js, Express, TypeScript, JWT auth, RBAC authorization, IP rate limit.</li>
+          <li><strong>Family Identity Engine:</strong> Household graph relations, lifecycle states, head reassignment, state standard IDs.</li>
+          <li><strong>Deduplication Pipeline:</strong> Multi-pass matching (Exact + Levenshtein / Soundex), BullMQ queue, confidence score clusters.</li>
+        </ul>
+      </div>
+
+      <div class="spec-card">
+        <h3>3. Persistence, Storage &amp; Zero-PII ID</h3>
+        <ul>
+          <li><strong>Relational DB:</strong> PostgreSQL/MySQL storing relations, family hierarchies, verification states, and immutable audit trails.</li>
+          <li><strong>Storage &amp; Cache:</strong> S3-compatible Object Storage for scanned documents; Redis for session cache and queue processing.</li>
+          <li><strong>Identity Gateway:</strong> Tokenized references; strict zero-raw-PII storage policy.</li>
+        </ul>
+      </div>
+
+      <div class="spec-card">
+        <h3>4. Welfare Scheme Integration &amp; Security</h3>
+        <ul>
+          <li><strong>Schemes:</strong> Ration (NFSA), Housing (PMAY), Scholarships, Health (PM-JAY), Pensions, and PM-KISAN DBT hooks.</li>
+          <li><strong>Security:</strong> End-to-end TLS 1.3, AES-256 at rest, pre-signed expiring S3 URLs, append-only immutable audit trail.</li>
+          <li><strong>Analytics:</strong> SQL aggregate views, Chart.js KPI telemetry, district/taluka SLA heatmaps.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    let scale = 1;
+    let translateX = 0;
+    let translateY = 0;
+    let isDragging = false;
+    let startX, startY;
+
+    const viewport = document.getElementById('viewport');
+    const svgWrapper = document.getElementById('svgWrapper');
+    const zoomText = document.getElementById('zoomLevel');
+
+    function updateTransform() {
+      svgWrapper.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+      zoomText.textContent = `Zoom: ${Math.round(scale * 100)}%`;
+    }
+
+    function zoomIn() {
+      scale = Math.min(scale * 1.25, 4.0);
+      updateTransform();
+    }
+
+    function zoomOut() {
+      scale = Math.max(scale / 1.25, 0.4);
+      updateTransform();
+    }
+
+    function resetZoom() {
+      scale = 1;
+      translateX = 0;
+      translateY = 0;
+      updateTransform();
+    }
+
+    viewport.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const delta = e.deltaY > 0 ? 0.9 : 1.1;
+      scale = Math.min(Math.max(scale * delta, 0.4), 4.0);
+      updateTransform();
+    }, { passive: false });
+
+    viewport.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      startX = e.clientX - translateX;
+      startY = e.clientY - translateY;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      translateX = e.clientX - startX;
+      translateY = e.clientY - startY;
+      updateTransform();
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDragging = false;
+    });
+
+    function downloadSVG() {
+      const a = document.createElement('a');
+      a.href = 'architecture-diagram.svg';
+      a.download = 'Family_Platform_System_Architecture.svg';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    function exportPNG() {
+      fetch('architecture-diagram.svg')
+        .then(res => res.text())
+        .then(svgText => {
+          const img = new Image();
+          const svgBlob = new Blob([svgText], { type: 'image/svg+xml;charset=utf-8' });
+          const url = URL.createObjectURL(svgBlob);
+
+          img.onload = () => {
+            const canvas = document.createElement('canvas');
+            canvas.width = 1920;
+            canvas.height = 1080;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, 1920, 1080);
+            URL.revokeObjectURL(url);
+
+            const pngUrl = canvas.toDataURL('image/png');
+            const a = document.createElement('a');
+            a.href = pngUrl;
+            a.download = 'Family_Platform_System_Architecture_1080p.png';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          };
+          img.src = url;
+        });
+    }
+  </script>
+</body>
+</html>
